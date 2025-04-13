@@ -1,13 +1,20 @@
 import './globals.css';
 import { Roboto } from 'next/font/google';
 
+// Ініціалізація шрифту Roboto
 const roboto = Roboto({ subsets: ['latin'], weight: ['400', '700'] });
 
+// Метадані для сторінки
 export const metadata = {
   title: 'Щоденний космос',
 };
 
-export default function RootLayout({ children }) {
+// Типізація пропсів (потрібно для TypeScript, можна видалити для JavaScript)
+type RootLayoutProps = {
+  children: React.ReactNode;
+};
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="uk">
       <body className={`${roboto.className} bg-[#1a1a2e] text-white min-h-screen`}>

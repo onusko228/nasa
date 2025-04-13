@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 const DailyImage = ({ data }) => {
   // Перевірка, чи data існує, щоб уникнути помилок при зверненні до властивостей
@@ -8,8 +9,10 @@ const DailyImage = ({ data }) => {
 
   return (
     <div className="text-center">
-      <img
-        src={data.url}
+      <Image
+        src={data.url} 
+        width={1000}
+        height={1000}
         alt={data.title || 'Зображення дня'} // Додано запасний alt
         className="mx-auto max-w-full max-h-[500px] rounded-lg shadow-lg mb-4"
       />
